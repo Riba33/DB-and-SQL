@@ -1,18 +1,18 @@
-CREATE SCHEMA IF NOT EXISTS `mydb1` DEFAULT CHARACTER SET utf8mb4 ;
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8mb4 ;
 
-CREATE TABLE IF NOT EXISTS `mydb1`.`skils` (
+CREATE TABLE IF NOT EXISTS `mydb`.`skils` (
   `id` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `name` VARCHAR(45) NOT NULL,
   `level` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
   
-  CREATE TABLE IF NOT EXISTS `mydb1`.`projects` (
+  CREATE TABLE IF NOT EXISTS `mydb`.`projects` (
   `id` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `name` VARCHAR(45) NOT NULL,
   `total_cost` INT NULL,
   PRIMARY KEY (`id`));
   
-  CREATE TABLE IF NOT EXISTS `mydb1`.`developers` (
+  CREATE TABLE IF NOT EXISTS `mydb`.`developers` (
   `id` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `name` VARCHAR(45) NOT NULL,
   `surname` VARCHAR(45) NOT NULL,
@@ -20,19 +20,19 @@ CREATE TABLE IF NOT EXISTS `mydb1`.`skils` (
   `gender` CHAR(1) NOT NULL,
   PRIMARY KEY (`id`));
   
-  CREATE TABLE IF NOT EXISTS `mydb1`.`customers` (
+  CREATE TABLE IF NOT EXISTS `mydb`.`customers` (
   `id` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `name` VARCHAR(128) NOT NULL,
   `safer` VARCHAR(128) NOT NULL,
   PRIMARY KEY (`id`));
   
-  CREATE TABLE IF NOT EXISTS `mydb1`.`companies` (
+  CREATE TABLE IF NOT EXISTS `mydb`.`companies` (
   `id` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `name` VARCHAR(128) NOT NULL,
   `safer` VARCHAR(128) NOT NULL,
   PRIMARY KEY (`id`));
   
-  CREATE TABLE IF NOT EXISTS `mydb1`.`developers_projects` (
+  CREATE TABLE IF NOT EXISTS `mydb`.`developers_projects` (
   `id` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `developers_id` INT NOT NULL,
   `projects_id` INT NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `mydb1`.`skils` (
   FOREIGN KEY (projects_id) REFERENCES projects (id),
   PRIMARY KEY (`id`));
   
-  CREATE TABLE IF NOT EXISTS `mydb1`.`customers_projects` (
+  CREATE TABLE IF NOT EXISTS `mydb`.`customers_projects` (
   `id` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `projects_id` INT NOT NULL,
   `customers_id` INT NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `mydb1`.`skils` (
   PRIMARY KEY (`id`)
   );
   
-  CREATE TABLE IF NOT EXISTS `mydb1`.`companies_projects` (
+  CREATE TABLE IF NOT EXISTS `mydb`.`companies_projects` (
   `id` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `projects_id` INT NOT NULL,
   `companies_id` INT NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `mydb1`.`skils` (
   FOREIGN KEY (projects_id) REFERENCES projects (id),
   FOREIGN KEY (companies_id) REFERENCES companies (id));
   
-  CREATE TABLE IF NOT EXISTS `mydb1`.`developers_skils` (
+  CREATE TABLE IF NOT EXISTS `mydb`.`developers_skils` (
   `id` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `developers_id` INT NOT NULL,
   `skils_id` INT NOT NULL,
