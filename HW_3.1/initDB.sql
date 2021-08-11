@@ -36,37 +36,29 @@ CREATE TABLE IF NOT EXISTS companies (
 );
   
 CREATE TABLE IF NOT EXISTS developers_projects (
-  id INT NOT NULL AUTO_INCREMENT UNIQUE,
   developers_id INT NOT NULL,
   projects_id INT NOT NULL,
   FOREIGN KEY (developers_id) REFERENCES developers (id),
   FOREIGN KEY (projects_id) REFERENCES projects (id),
-  PRIMARY KEY (id)
 );
   
 CREATE TABLE IF NOT EXISTS customers_projects (
-  id INT NOT NULL AUTO_INCREMENT UNIQUE,
   projects_id INT NOT NULL,
   customers_id INT NOT NULL,
   FOREIGN KEY (projects_id) REFERENCES projects (id),
   FOREIGN KEY (customers_id) REFERENCES customers (id),
-  PRIMARY KEY (id)
  );
   
 CREATE TABLE IF NOT EXISTS companies_projects (
-  id INT NOT NULL AUTO_INCREMENT UNIQUE,
   projects_id INT NOT NULL,
   companies_id INT NOT NULL,
-  PRIMARY KEY (id),
   FOREIGN KEY (projects_id) REFERENCES projects (id),
   FOREIGN KEY (companies_id) REFERENCES companies (id)
 );
   
 CREATE TABLE IF NOT EXISTS developers_skils (
-  id INT NOT NULL AUTO_INCREMENT UNIQUE,
   developers_id INT NOT NULL,
   skils_id INT NOT NULL,
-  PRIMARY KEY (id),
   FOREIGN KEY (developers_id) REFERENCES developers (id),
   FOREIGN KEY (skils_id) REFERENCES skils (id)
 );
