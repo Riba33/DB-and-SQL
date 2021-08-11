@@ -1,2 +1,3 @@
-SELECT * FROM mydb.projects
-ORDER BY cost LIMIT 1;
+SELECT name,cost FROM projects
+	ORDER BY cost LIMIT 1
+;
