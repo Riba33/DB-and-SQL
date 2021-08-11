@@ -38,14 +38,14 @@ CREATE TABLE IF NOT EXISTS developers_projects (
   developers_id INT NOT NULL,
   projects_id INT NOT NULL,
   FOREIGN KEY (developers_id) REFERENCES developers (id),
-  FOREIGN KEY (projects_id) REFERENCES projects (id),
+  FOREIGN KEY (projects_id) REFERENCES projects (id)
 );
   
 CREATE TABLE IF NOT EXISTS customers_projects (
   projects_id INT NOT NULL,
   customers_id INT NOT NULL,
   FOREIGN KEY (projects_id) REFERENCES projects (id),
-  FOREIGN KEY (customers_id) REFERENCES customers (id),
+  FOREIGN KEY (customers_id) REFERENCES customers (id)
  );
   
 CREATE TABLE IF NOT EXISTS companies_projects (
